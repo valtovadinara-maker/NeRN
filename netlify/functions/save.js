@@ -6,13 +6,15 @@ exports.handler = async function(event, context) {
   try {
     const data = JSON.parse(event.body);
 
-    // Чисте URL посилання без зайвих символів
     const airtableUrl = "https://api.airtable.com/v0/appuV2qNUav59BzfW/tblkbG1G66nO4pREg";
+    
+    // ВСТАВ СВІЙ ТОКЕН З AIRTABLE (починається на pat...) У ЛАПКИ НИЖЧЕ:
+    const token = "ВСТАВ_СВІЙ_ТОКЕН_СЮДИ";
 
     const response = await fetch(airtableUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.AIRTABLE_TOKEN}`,
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -46,4 +48,5 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({ error: error.message }) 
     };
   }
+};
 };
