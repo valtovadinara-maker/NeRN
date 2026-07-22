@@ -9,6 +9,7 @@ exports.handler = async function(event, context) {
     const airtableUrl = "https://api.airtable.com/v0/appuV2qNUav59BzfW/tblkbG1G66nO4pREg?view=viwW81FyzG12vbnlp";
     
     // Встав свій секретний токен Airtable замість образу нижче (у лапках)
+    console.log('Мій токен:', process.env.AIRTABLE_TOKEN);
     const token = process.env.AIRTABLE_TOKEN;
 
     const response = await fetch(airtableUrl, {
