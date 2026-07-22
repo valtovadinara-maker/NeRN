@@ -6,9 +6,9 @@ exports.handler = async function(event, context) {
   try {
     const data = JSON.parse(event.body);
 
-    const airtableUrl = "https://airtable.com/appuV2qNUav59BzfW/tblkbG1G66nO4pREg/viwW81FyzG12vbnlp";
+    const airtableUrl = "https://airtable.com/appuV2qNUav59BzfW/tblkbG1G66nO4pREg/viwW81FyzG12vbnlp?blocks=hide";
     
-    // ВСТАВ СВІЙ ТОКЕН З AIRTABLE (починається на pat...) У ЛАПКИ НИЖЧЕ:
+    // Встав свій секретний токен Airtable замість образу нижче (у лапках)
     const token = "patPicFIhqfL7A3uM";
 
     const response = await fetch(airtableUrl, {
@@ -48,5 +48,4 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({ error: error.message }) 
     };
   }
-};
 };
