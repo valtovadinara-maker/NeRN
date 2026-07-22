@@ -6,10 +6,10 @@ exports.handler = async function(event, context) {
   try {
     const data = JSON.parse(event.body);
 
-    const airtableUrl = "https://api.airtable.com/v0/appuV2qNUav59BzfW/tblkbG1G66nO4pREg";
+    const airtableUrl = "https://airtable.com/appuV2qNUav59BzfW/tblkbG1G66nO4pREg/viwW81FyzG12vbnlp";
     
     // ВСТАВ СВІЙ ТОКЕН З AIRTABLE (починається на pat...) У ЛАПКИ НИЖЧЕ:
-    const token = "ВСТАВ_СВІЙ_ТОКЕН_СЮДИ";
+    const token = "patPicFIhqfL7A3uM";
 
     const response = await fetch(airtableUrl, {
       method: 'POST',
